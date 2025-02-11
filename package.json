@@ -18,9 +18,9 @@
   },
   "scripts": {
     "test-tool": "teamsapptester start",
-    "start": "node --env-file .env  app.js",
+    "start": "node --env-file .env  src/app.js",
     "test": "npm-run-all -p -r start test-tool",
-    "bundle": "esbuild app.js --bundle --platform=node --metafile=dist/meta.json --outfile=dist/bundle.cjs --tree-shaking=true --keep-names",
-    "docker": "docker build -t botagents.azurecr.io/node-echo-bot:latest ."
+    "bundle": "esbuild src/app.js --bundle --platform=node --metafile=dist/meta.json --outfile=dist/bundle.cjs --tree-shaking=true --keep-names",
+    "docker": "docker build -t botagents.azurecr.io/botagent01:latest ."
   }
 }
