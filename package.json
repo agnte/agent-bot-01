@@ -1,6 +1,6 @@
 {
-  "name": "agent-bot-01",
-  "version": "1.0.0",
+  "name": "agentbot01",
+  "version": "1.0.3",
   "main": "index.js",
   "keywords": [],
   "author": "",
@@ -21,6 +21,6 @@
     "start": "node --env-file .env  src/app.js",
     "test": "npm-run-all -p -r start test-tool",
     "bundle": "esbuild src/app.js --bundle --platform=node --metafile=dist/meta.json --outfile=dist/bundle.cjs --tree-shaking=true --keep-names",
-    "docker": "docker build -t botagents.azurecr.io/botagent01:latest ."
+    "docker": "docker build -t \"botagents.azurecr.io/$npm_package_name:$npm_package_version\" ."
   }
 }
