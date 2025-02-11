@@ -7,11 +7,11 @@ const {
     authorizeJWT,
 } = require('@microsoft/agents-bot-hosting')
 
-const { SuggestedActionsBot } = require('./bot')
+const { EchoBot } = require('./bot')
 
 const config = loadAuthConfigFromEnv()
 const adapter = new CloudAdapter(config);
-const myBot = new SuggestedActionsBot()
+const myBot = new EchoBot()
 
 
 const server = express()
