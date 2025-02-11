@@ -2,12 +2,25 @@
   "name": "agent-bot-01",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@microsoft/agents-bot-hosting": "^0.1.23-g9fc7cd953a",
+    "express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@microsoft/teams-app-test-tool": "^0.2.4",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "test-tool": "teamsapptester start",
+    "start": "node --env-file .env  app.js",
+    "test": "npm-run-all -p -r start test-tool",
+    "bundle": "esbuild app.js --bundle --platform=node --metafile=dist/meta.json --outfile=dist/bundle.cjs --tree-shaking=true --keep-names",
+    "docker": "docker build -t botagents.azurecr.io/node-echo-bot:latest ."
+  }
 }
