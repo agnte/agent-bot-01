@@ -8,7 +8,7 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "@microsoft/agents-bot-hosting": "0.1.27-gbc324828d9",
+    "@microsoft/agents-bot-hosting": "0.1.5",
     "express": "^5.0.1"
   },
   "devDependencies": {
